@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="UTF-8">
+    <title>Virtual Counselor Network</title>
+<style>
+p.round1 {
+  border: 1px solid black;
+  border-radius: 5px;;
+}
+</style>
+</head>
+
+<body style = "background-color: royalblue;">
+   
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+        
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <form action="process.php" method="POST" 
+    onsubmit="return checkform(this);"> <!-- post adds data to a data base, get is good for searching or not adding data to a server AND IS NOT SECURE -->
+    <div 
+    style = "background-color: lightgray;">  <!-- this is a block level element that makes what's under it on it's own line-->
+    <fieldset > 
+
+        <legend>New User Register</legend>
+
+        <label>First Name</label>
+        <input type="text" name="firstName" autofocus class = "round1" style = "background-color: white;"> <!--"text" is because it's a text type, first-name is how 
+        (in this example, PHP) is storing that variable to the server-->
+     <!-- placeholder is a value that allows the text box to be emptied when it's clicked-->
+    <br>
+    <br>
+        <label>Middle Name</label>
+        <input type="text" name="middleName" 
+        class = "round1" style = "background-color: white;">
+    <br>
+    <br>
+        <label>Last Name</label>
+        <input type="text" name="lastName" class = "round1" style = "background-color: white;">
+    <br>
+    <br>
+        <label>User ID</label>
+        <input type="text" name="userId" class = "round1" style = "background-color: white;">
+    <br>
+    <br>
+        <label>Password</label>
+        <input type="password" name="pwd" class = "round1" style = "background-color: white;">
+    <br>
+    <br>
+        <label>Re-enter Password</label>
+        <input type="password" name="pwdRe" class = "round1" style = "background-color: white;">
+    <br>
+    <br>
+    <input type="checkbox" name="termsandconditions" value="check"> I Agree to the Terms and Conditions
+    <br>
+    <br>
+    <!-- START CAPTCHA -->
+    <br>
+    <br>
+    <div class="capbox">
+
+    <div id="CaptchaDiv"></div>
+
+    <div class="capbox-inner">
+    Type the above number:<br>
+
+    <input type="hidden" id="txtCaptcha">
+    <input type="text" name="CaptchaInput" id="CaptchaInput" size="15" class = "round1" style = "background-color: white;"><br>
+
+    </div>
+    </div>
+    <br><br>
+    <!-- END CAPTCHA -->
+    <input type="submit" formenctype="multipart/form-data"
+    value="Register"> <!-- once clicking submit would then be redirected to example form action on line 68, process.php-->
+
+    
+    <script type="text/javascript">
+
+        // Captcha Script
+        
+        function checkform(theform){
+        var why = "";
+        
+        if(theform.CaptchaInput.value == ""){
+        why += "- Please Enter CAPTCHA Code.\n";
+        }
+        if(theform.CaptchaInput.value != ""){
+        if(ValidCaptcha(theform.CaptchaInput.value) == false){
+        why += "- The CAPTCHA Code Does Not Match.\n";
+        }
+        }
+        if(why != ""){
+        alert(why);
+        return false;
+        }
+        }
+        
+        var a = Math.ceil(Math.random() * 9)+ '';
+        var b = Math.ceil(Math.random() * 9)+ '';
+        var c = Math.ceil(Math.random() * 9)+ '';
+        var d = Math.ceil(Math.random() * 9)+ '';
+        var e = Math.ceil(Math.random() * 9)+ '';
+        
+        var code = a + b + c + d + e;
+        document.getElementById("txtCaptcha").value = code;
+        document.getElementById("CaptchaDiv").innerHTML = code;
+        
+        // Validate input against the generated number
+        function ValidCaptcha(){
+        var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+        var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+        if (str1 == str2){
+        return true;
+        }else{
+        return false;
+        }
+        }
+        
+        // Remove the spaces from the entered and generated code
+        function removeSpaces(string){
+        return string.split(' ').join('');
+        }
+        </script>
+</fieldset>
+</div>
+<br>
+<br>
+<br>
+    <form action="process.php" method="POST">
+        <div 
+        style = "background-color: lightgray;">
+        <fieldset style = "background-color: lightgray;">
+            <legend>Existing User Login</legend>
+            <label>User ID</label>
+            <input type="text" name="userId" class = "round1" style = "background-color: white;">
+            <br>
+            <br>
+            <label>Password</label>
+            <input type="password" name="password" class = "round1" style = "background-color: white;">
+            <br>
+            <a href="#">Forgot password?</a>
+        </fieldset>
+        </div>
+    </form>
+    <div class="footer" style = "background-color: white">
+        <div class="footer__logo">
+            <img src= "img/.png" alt="vcnlogo" /> <!-- Needs image -->
+        </div>
+        <ul class="footer__nav">
+        <p class="footer__copyright">
+        Copyright &copy; All Rights Reserved.
+        </p>
+        <a href="#">Disclaimer</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Feedback / Complaints</a>
+        </ul>
+        
+        </div>
+    </body>
+</form>
+
+
+
+
+<!-- INTAKE 1 -->
+
+<!-- RADIO BUTTON SELECT-->
+
+<!--<div>
+       <label>Gender</label>
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label>Age:</label>
+        <input type="number" name="age"
+        value="30">  30 would just be a predefined number-->
+<!--     </div>
+    <br>
+    <div>
+        <label>Birthday:</label>
+        <input type="date" name="birthday">
+    </div> -->
+<!--     <select name="Best Time to Contact" size="5">
+            <option value="12:00am">12:00am</option>
+            <option value="1:00am">1:00am</option>
+            <option value="2:00am">2:00am</option>
+            <option value="3:00am">3:00am</option>
+          </select>  
+        
+  E-mail: <input type="email" name="userid"><br>
+  <input type="submit" formnovalidate value="Submit without validation"> //email validation
+
+  Username: <input type="text" name="usrname" required> //how to make things required. 
+
+        -->

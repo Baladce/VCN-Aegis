@@ -1,0 +1,26 @@
+[
+    {
+        "name": "noted_id",
+        "type": "numeric(18,0)"
+    },
+    {
+        "name": "admin_id",
+        "type": "numeric(18,0)"
+    },
+    {
+        "name": "userid",
+        "type": "numeric(18,0)"
+    },
+    {
+        "name": "dash_id",
+        "type": "numeric(18,0)"
+    },
+    {
+        "name": "note",
+        "type": "text"
+    },
+    {
+        "name": "tstamp",
+        "type": "datetime"
+    }
+]

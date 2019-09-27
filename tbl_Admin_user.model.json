@@ -1,0 +1,39 @@
+[
+  {
+    "admin_id": {
+      "type": "numeric(18,0)",
+      "required": "true",
+      "unique": "true"
+    },
+    "parent_admin_id": {
+      "type": "numeric(18,0)"
+    },
+    "admin_type": {
+      "type": "numeric(18,0)"
+    },
+    "admin_uid": {
+      "type": "varchar(50)"
+    },
+    "admin_pwd": {
+      "type": "varchar(50)"
+    },
+    "admin_name": {
+      "type": "varchar(50)"
+    },
+    "admin_emailid": {
+      "type": "varchar(50)"
+    },
+    "admin_phone": {
+      "type": "varchar(10)"
+    },
+    "priviligeid": {
+      "type": "numeric(18,0)"
+    }, 
+    "created_on": {
+      "type": "date"
+    }, 
+    "tstamp": {
+      "type": "date"
+    }
+  } 
+]

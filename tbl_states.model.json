@@ -1,0 +1,12 @@
+[
+    {
+        "name": "stateid",
+        "type": "numeric(18,0",
+        "required": "true",
+        "unique": "true"
+    },
+    {
+        "name": "states",
+        "type": "varchar(50)"
+    }
+]

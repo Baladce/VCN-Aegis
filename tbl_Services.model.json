@@ -1,0 +1,30 @@
+[
+    {
+        "name": "SID",
+        "type": "int"
+    },
+    {
+        "name": "UserID",
+        "type": "int"
+    },
+    {
+        "name": "ServiceID",
+        "type": "varchar(50)"
+    },
+    {
+        "name": "ModifyStatus",
+        "type": "varchar(5)"
+    },
+    {
+        "name": "CreatedDate",
+        "type": "datetime"
+    },
+    {
+        "name": "CreatedBy",
+        "type": "varchar(50)"
+    },
+    {
+        "name": "ModifiedDate",
+        "type": "datetime"
+    }
+]

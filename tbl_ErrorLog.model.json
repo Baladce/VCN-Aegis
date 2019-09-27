@@ -1,0 +1,22 @@
+[
+    {
+        "name": "ID",
+        "type": "int"
+    },
+    {
+        "name": "ExcelMessage",
+        "type": "varchar(MAX)"
+    },
+    {
+        "name": "PageId",
+        "type": "varchar(50)"
+    },
+    {
+        "name": "CreatedBy",
+        "type": "varchar(50)"
+    },
+    {
+        "name": "DateCreated",
+        "type": "datetime"
+    }
+]

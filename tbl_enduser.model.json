@@ -1,0 +1,84 @@
+[
+    {
+        "name": "userid", 
+        "type": "varchar(50)",
+        "required": "true",
+        "unique": "true"
+    },
+    {
+        "name": "name", 
+        "type": "varchar(50)"
+    },
+    {
+        "name": "emailid",
+        "type": "varchar(50)",
+        "required": ["true", "Please provide your email"],
+        "unique": "true",
+        "validator": ["true", "Please provide a valid email"]
+    }, 
+    {
+        "name": "phoneno",
+        "type": "varchar(15)"
+    }, 
+    {
+        "name": "pwd",
+        "type": "varchar(50)",
+        "required": "true"
+    },
+    {
+        "name": "IntakeCat",
+        "type": "varchar(50)"
+    }, 
+    {
+        "name": "IntakeType",
+        "type": "varchar(50)"
+    }, 
+    {
+        "name": "tstamp",
+        "type": "datetime"
+    }, 
+    {
+        "name": "referenceno",
+        "type": "varchar(50)"
+    }, 
+    {
+        "name": "termsandconditions",
+        "type": "binary",
+        "required": "true"
+    },
+    {
+        "name": "middlename",
+        "type": "varchar(50)"
+    }, 
+    {
+        "name": "lastname",
+        "type": "varchar(50)"
+    }, 
+    {
+        "name": "assignto",
+        "type": "numeric(18,0)"
+    }, 
+    {
+        "name": "assigndate",
+        "type": "date"
+    }, 
+    {
+        "name": "assignwho",
+        "type": "numeric(18,2)"
+    },
+    {
+        "name": "formstatus",
+        "type": "varchar(20)"
+    }, 
+    {
+        "name": "adminstatus",
+        "type": "varchar(20)"
+    }, 
+    {
+        "name": "iscompleted",
+        "type": "binary"
+    }, 
+    {
+        "name": "Status",
+        "type": "binary"}
+]

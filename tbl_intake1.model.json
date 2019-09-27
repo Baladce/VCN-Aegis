@@ -1,0 +1,148 @@
+[
+    {
+    "name": "userid",
+    "type": "numeric(18,2)"
+    },
+    {
+    "name": "id1",
+    "type": "numeric(18,2)",
+    "required": true,
+    "unique": true
+    },
+    {
+    "name": "date",
+    "type": "date"
+    },
+    {
+    "name": "language",
+    "type": "varchar(20)"
+    },
+    {
+    "name": "referrredby",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "name",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "address",
+    "type": "varchar(250)"
+    },
+    {
+    "name": "city",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "state",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "zipcode",
+    "type": "varchar(15)"
+    },
+    {
+    "name": "residencelength",
+    "type": "varchar(20)"
+    },
+    {
+    "name": "homephone",
+    "type": "varchar(15)"
+    },
+    {
+    "name": "cellphone",
+    "type": "varchar(15)"
+    },
+    {
+    "name": "workphone",
+    "type": "varchar(25)"
+    },
+    {
+    "name": "workphonext",
+    "type": "varchar(5)"
+    },
+    {
+    "name": "emailid",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "contacttime",
+    "type": "varchar(15)"
+    },
+    {
+    "name": "preferredcontact",
+    "type": "varchar(30)"
+    },
+    {
+    "name": "rlyears",
+    "type": "numeric(18,0)"
+    },
+    {
+    "name": "rlmonths",
+    "type": "numeric(18,0)"
+    },
+    {
+    "name": "rldays",
+    "type": "numeric(18,0)"
+    },
+    {
+    "name": "preftime_from",
+    "type": "varchar(10)"
+    },
+    {
+    "name": "preftime_to",
+    "type": "varchar(10)"
+    },
+    {
+    "name": "specialneeds",
+    "type": "varchar(30)"
+    },
+    {
+    "name": "areyou",
+    "type": "varchar(10)"
+    },
+    {
+    "name": "areyou_txt",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "language1",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "lastname",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "middlename",
+    "type": "varchar(50)"
+    },
+    {
+    "name": "specialneeds1",
+    "type": "binary"
+    },
+    {
+    "name": "specialneeds2",
+    "type": "binary"
+    },
+    {
+    "name": "specialneeds3",
+    "type": "binary"
+    },
+    {
+    "name": "specialneeds4",
+    "type": "binary"
+    },
+    {
+    "name": "specialneeds5",
+    "type": "binary"
+    },
+    {
+    "name": "specialneeds6",
+    "type": "binary"
+    },
+    {
+    "name": "Delstatus",
+    "type": "binary"
+    }
+]

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+For more information on how to configure your ASP.NET application, please visit
+http://go.microsoft.com/fwlink/?LinkId=169433
+-->
+<configuration>
+<configSections>
+<sectionGroup name="businessObjects">
+<sectionGroup name="crystalReports">
+<section name="rptBuildProvider" type="CrystalDecisions.Shared.RptBuildProviderHandler, CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, Custom=null" />
+</sectionGroup>
+</sectionGroup>
+</configSections>
+<appSettings>
+<add key="CrystalImageCleaner-AutoStart" value="true" />
+<add key="CrystalImageCleaner-Sleep" value="60000" />
+<add key="CrystalImageCleaner-Age" value="120000" />
+</appSettings>
+<connectionStrings>
+<!--<add name="ApplicationServices" connectionString="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true" providerName="System.Data.SqlClient"/>-->
+<!--<add name="MyVcnApp" connectionString="server=sql4.sqlsvr.net;database=Vcn;User ID=vcntest;Password=vcn12345" providerName="System.Data.SqlClient"/>-->
+<add name="MyVcnApp" connectionString="Data Source=mongodb://localhost:27017; Initial Catalog=VCN_Intake_Application" providerName="System.Data.SqlClient" />
+</connectionStrings>
+<system.web>
+<pages validateRequest="false" enableEventValidation="false" viewStateEncryptionMode ="Never" />
+<trust level="Full" />
+<httpHandlers>
+<add path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" validate="false" />
+</httpHandlers>
+<customErrors mode="Off" />
+<compilation debug="true" targetFramework="4.0">
+<assemblies>
+<add assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+<add assembly="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+<add assembly="Microsoft.Build.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+<add assembly="System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+<add assembly="System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+</assemblies>
+<buildProviders>
+<add extension=".rdlc" type="Microsoft.Reporting.RdlBuildProvider, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+</buildProviders>
+</compilation>
+<authentication mode="Forms">
+<forms loginUrl="~/Admin/Login.aspx" timeout="2880" />
+</authentication>
+<membership>
+<providers>
+<clear />
+<add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="ApplicationServices" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" applicationName="/" />
+</providers>
+</membership>
+<profile>
+<providers>
+<clear />
+<add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="ApplicationServices" applicationName="/" />
+</providers>
+</profile>
+<roleManager enabled="false">
+<providers>
+<clear />
+<add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="ApplicationServices" applicationName="/" />
+<add name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider" applicationName="/" />
+</providers>
+</roleManager>
+</system.web>
+<system.webServer>
+<rewrite>
+<rules>
+<rule name="Force HTTPS" enabled="true">
+<match url="(.*)" ignoreCase="false" />
+<conditions>
+<add input="{HTTPS}" pattern="off" />
+</conditions>
+<action type="Redirect" url="https://www.virtualcounselornetwork.net/{R:1}" appendQueryString="true" redirectType="Permanent" />
+</rule>
+</rules>
+</rewrite>
+<modules runAllManagedModulesForAllRequests="true"></modules>
+<directoryBrowse enabled="true" />
+<validation validateIntegratedModeConfiguration="false" />
+<defaultDocument>
+<files>
+<clear />
+<add value="Pages/Index.aspx" />
+<add value="login.aspx" />
+</files>
+</defaultDocument>
+</system.webServer>
+</configuration>
+insert into tbl_enduser(name,emailid,phoneno,pwd,IntakeCat,IntakeType,tstamp,referenceno,termsandconditions,middlename,
+lastname,assignto,assigndate,assignwho,formstatus,adminstatus,iscompleted,Status) values(@name,@emailid,@phoneno,@pwd,
+@IntakeCat,@IntakeType,@tstamp,@referenceno,@termsandconditions,@middlename,@lastname,@assignto,@assigndate,
+@assignwho,@formstatus,@adminstatus,@iscompleted,'false')
+set @RetVal=SCOPE_IDENTITY()
+end
+else begin
+update tbl_enduser set name=@name,emailid=@emailid,phoneno=@phoneno,pwd=@pwd,IntakeCat=@IntakeCat,IntakeType=@IntakeType,
+tstamp=@tstamp,referenceno=@referenceno,termsandconditions=@termsandconditions,middlename=@middlename,
+lastname=@lastname,assignto=@assignto,assigndate=@assigndate,assignwho=@assignwho,
+formstatus=@formstatus,adminstatus=@adminstatus,iscompleted=@iscompleted where userid=@userid
+set @RetVal=@userid
+end return @RetVal end

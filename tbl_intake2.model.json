@@ -1,0 +1,165 @@
+[
+    {"name": "userid",
+    "type": "numeric(18,2)",
+    "required": true,
+    "unique": true
+    },
+    {"name": "userid2",
+    "type": "numeric(18,2)",
+    "required": true,
+    "unique": true
+    },
+    {"name": "gender",
+    "type": "varchar(50)"
+    },
+    {"name": "dob",
+    "type": "date"
+    },
+    {"name": "age",
+    "type": "numeric(18,2)"
+    },
+    {"name": "maritualstatus",
+    "type": "varchar(50)"
+    },
+    {"name": "race_alaskaamerica",
+    "type": "binary"
+    },
+    {"name": "race_asia",
+    "type": "binary"
+    },
+    {"name": "race_africa",
+    "type": "binary"
+    },
+    {"name": "race_nativepacific",
+    "type": "binary"
+    },
+    {"name": "race_white",
+    "type": "binary"
+    },
+    {"name": "race_other",
+    "type": "binary"
+    },
+    {"name": "race_othertxt",
+    "type": "varchar(50)"
+    },
+    {"name": "Ethnicity",
+    "type": "varchar(15)"
+    },
+    {"name": "Foreignborn",
+    "type": "binary"
+    },
+    {"name": "Disabled",
+    "type": "binary"
+    },
+    {"name": "Militaryservice",
+    "type": "binary"
+    },
+    {"name": "Educationlevel",
+    "type": "varchar(50)"
+    },
+    {"name": "annualhouseholdincome",
+    "type": "varchar(50)"
+    },
+    {"name": "currenthousingsituation",
+    "type": "varchar(250)"
+    },
+    {"name": "HousingSituation",
+    "type": "varchar(140)"
+    },
+    {"name": "Householdtype",
+    "type": "varchar(50)"
+    },
+    {"name": "NumberofResidents",
+    "type": "varchar(50)"
+    },
+    {"name": "tstamp",
+    "type": "datetime"
+    },
+    {"name": "relationship1",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship2",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship3",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship4",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship5",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship6",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship7",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship8",
+    "type": "varchar(30)"
+    },
+    {"name": "relationship9",
+    "type": "varchar(30)"
+    },
+    {"name": "age1",
+    "type": "int"
+    },
+    {"name": "age2",
+    "type": "int"
+    },
+    {"name": "age3",
+    "type": "int"
+    },
+    {"name": "age4",
+    "type": "int"
+    },
+    {"name": "age5",
+    "type": "int"
+    },
+    {"name": "age6",
+    "type": "int"
+    },
+    {"name": "age7",
+    "type": "int"
+    },
+    {"name": "age8",
+    "type": "int"
+    },
+    {"name": "age9",
+    "type": "int"
+    },
+    {"name": "dependent1",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent2",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent3",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent4",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent5",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent6",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent7",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent8",
+    "type": "varchar(5)"
+    },
+    {"name": "dependent9",
+    "type": "varchar(5)"
+    },
+    {"name": "Delstatus",
+    "type": "binary"
+    },
+    {"name": "Type ofService",
+    "type": "varchar(MAX)"
+    }
+]
